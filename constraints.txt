@@ -1,0 +1,5 @@
+# Compatibility constraints for the ChromaDB 0.5.x runtime.
+pydantic<3,>=2.4.2
+# ChromaDB 0.5.0 calls the legacy posthog.capture(user_id, event, properties)
+# API. PostHog 8 removed that signature and emits non-fatal telemetry errors.
+posthog>=2.4.0,<4.0.0

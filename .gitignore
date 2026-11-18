@@ -1,0 +1,15 @@
+﻿.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.env
+.env.*
+!.env.example
+.DS_Store
+Thumbs.db
+*.log
+.D:\TrustTrace_Temp/
+data/chroma_db/

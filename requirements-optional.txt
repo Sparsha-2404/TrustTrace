@@ -1,0 +1,4 @@
+# Optional integrations; not required for the core four-agent runtime.
+agentdojo>=0.1
+mistralai>=1.0
+kaleido

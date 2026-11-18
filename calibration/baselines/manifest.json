@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "embedding_backend": "sentence-transformers/all-MiniLM-L6-v2",
+  "embedding_dimension": 384,
+  "required_baselines": [
+    "Retriever",
+    "Planner",
+    "Executor",
+    "Generator",
+    "UserPrompt"
+  ],
+  "files_sha256": {
+    "Retriever.json": "ad50c752ffab279a35d038fba895e014ef901c506baa167d81717e22e964ccba",
+    "Planner.json": "53e70e3e95fede5580b7bb64fbb8f2a6d0ed947e3ca18a34342f6d2580a1e818",
+    "Executor.json": "9b5dee58a7f450ba5afb8a21dbe06881e772cc053545e0c84320b566a0c18bc6",
+    "Generator.json": "595599fd9cc999c78f047c79b3e57940afffaf55c3e68193c269049ba7cc8a0a",
+    "UserPrompt.json": "902728db49c435e51c004202ebe99e28e2d280f3b46cd0d2de6d1b7fb2816bdc"
+  }
+}

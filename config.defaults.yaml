@@ -1,0 +1,35 @@
+# Trust engine (guide defaults)
+delta: 0.4
+k: 3
+mu: 0.3  # Graph trust-propagation coefficient (A3 sets mu=0)
+rho: 0.95
+
+# Suspicion thresholds per attack type
+lambda: 0.35
+lambda_direct: 0.6
+lambda_indirect: 0.55
+lambda_memory: 0.5
+
+# IRS = alpha*R + beta*E + gamma*SD
+alpha: 0.35
+beta: 0.40
+gamma: 0.25
+
+# MS = lambda1*IRS + lambda2*SD + lambda3*BD
+lambda1: 0.50
+lambda2: 0.25
+lambda3: 0.25
+
+# Calibration
+calibration_runs: 80
+
+# Compromise confirmation
+persistence_window: 3
+persistence_by_agent:
+  Planner: 2
+  Retriever: 2
+  Executor: 1
+  Generator: 1
+
+# Experiment scale (attacks per type for full pipeline)
+n_per_attack_type: 50

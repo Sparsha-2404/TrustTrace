@@ -1,0 +1,62 @@
+delta: 0.4
+k: 3
+mu: 0.3
+rho: 0.95
+lambda: 0.35
+lambda_direct: 0.6
+lambda_indirect: 0.55
+lambda_memory: 0.5
+alpha: 0.35
+beta: 0.4
+gamma: 0.25
+lambda1: 0.5
+lambda2: 0.25
+lambda3: 0.25
+calibration_runs: 80
+persistence_window: 3
+persistence_by_agent:
+  Planner: 2
+  Retriever: 2
+  Executor: 1
+  Generator: 1
+n_per_attack_type: 50
+attack_thresholds:
+  direct: 0.6
+  indirect: 0.5
+  jailbreak: 0.75
+  memory: 0.5
+fusion_weights:
+  classifier: 0.5
+  irs: 0.2
+  multilayer: 0.3
+lambda4: 0.1
+lambda5: 0.1
+lambda_context_hijack: 0.5
+lambda_tool_injection: 0.55
+lambda_multi_stage_attack: 0.55
+llm:
+  api_key: null
+  base_url: http://127.0.0.1:1234/v1
+  model: qwen/qwen3-4b-2507
+  provider: lm_studio
+decision_engine:
+  irs_high: 0.6
+  irs_medium: 0.4
+  trust_critical: 0.3
+  trust_warning: 0.5
+  bd_critical: 0.5
+  ms_critical: 0.5
+delta_intent: 0.15
+epsilon: 0.1
+zeta: 0.1
+memory_protection:
+  trust_threshold: 0.5
+  memory_trust_threshold: 0.3
+agent_validation:
+  planner_trust_threshold: 0.5
+  retriever_trust_threshold: 0.5
+  tool_trust_threshold: 0.5
+adaptive_thresholds:
+  turn_number_threshold: 3
+  repeated_attack_adjustment: 0.1
+  high_trust_adjustment: 0.05

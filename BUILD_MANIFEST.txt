@@ -1,0 +1,43 @@
+TrustTrace V3 — containment, recovery and evaluation-parity follow-up
+Build date: 2026-11-18
+Source archive SHA-256: af6b6b15b35af5b5d8528c9d2c1434813ef4904b4fc9ebb91e95b67171431fab
+Build environment: Python 3.13.5 (isolated review environment)
+Validation performed for this source revision:
+- Python compile check across project source: PASS
+- pytest: 120 passed, 0 failed, 2 expected warnings
+- New regression coverage: sanitized retrieval context, direct input before retrieval,
+  known injected payload rejection, recovery fixture rollback, baseline/defended
+  scenario-manifest parity, N/A recovery metrics
+
+Key changes:
+- Security callbacks can replace retrieved context; rejected content is not sent
+  downstream to Planner.
+- A2-A4 inspect raw user input before ChromaDB retrieval.
+- Live containment is recorded for Patient Zero and recovery even when trust
+  dynamics are disabled.
+- Recovery executes before attack fixture cleanup and verifies explicit fixture
+  rollback and trust/quarantine restoration.
+- Baseline and defended evaluations use identical scenario IDs, queries and
+  payload indices; mismatch aborts comparative reporting.
+- Lexical output markers are labelled as proxies, never semantic goal success;
+  system-generated [BLOCKED]/[QUARANTINED] responses are excluded from proxy hits
+  because the refusal text itself contains the word "compromised".
+- No-observation recovery time is N/A, not 0 seconds.
+- AgentDojo is excluded until a real task/document/tool/oracle adapter exists.
+- ChromaDB 0.5.0 compatibility constraint pins PostHog to the legacy API range.
+- Quick validation exit status indicates execution only, not security acceptance.
+
+Package hygiene:
+- Excludes .env, .venv, local ChromaDB state, local SQLite logs, generated HTML
+  reports, model pickle caches, bytecode and pytest cache.
+- Includes .env.example and source/test files. Recreate the virtual environment
+  and persistent ChromaDB locally after extraction.
+
+Not verified in the build environment:
+- Live LM Studio calls from this patched source package.
+- Real SentenceTransformer model load/inference from this patched package.
+- Persistent ChromaDB restart/quarantine/rollback on Windows after patching.
+- Complete live A0-A4 matrix, independent held-out test, or publication results.
+- Scenario-specific semantic goal oracle (ASR remains a lexical marker proxy).
+
+Research readiness: hardened diagnostic candidate; NOT publication-ready.
